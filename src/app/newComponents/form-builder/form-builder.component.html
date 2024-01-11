@@ -1,38 +1,57 @@
-<div>
-    <h1>This is Heading.</h1>
-    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-    <!-- <div class="example-container"> -->
-        <!-- <mat-form-field appearance="fill">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            @if (email.invalid) {
-                <mat-error>{{getErrorMessage()}}</mat-error> 
-            }
-        </mat-form-field> -->
-        <!-- <mat-form-field>
+<!-- <div class="example-container">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()" (ngSubmit)="addField()">
+        <mat-form-field>
             <mat-label>Field Name</mat-label>
-            <input matInput>
+            <input matInput name="labelName" formControlName="labelName">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Field Type</mat-label>
-            <mat-select>
-                <mat-option value="one">Text</mat-option>
-                <mat-option value="two">Email</mat-option>
-                <mat-option value="three">Password</mat-option>
-                <mat-option value="four">Select</mat-option>
+            <mat-select name="labelType" formControlName="labelType" id="labelType">
+                <mat-option value="text">Text</mat-option>
+                <mat-option value="email">Email</mat-option>
+                <mat-option value="password">Password</mat-option>
+                <mat-option value="select">Select</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-checkbox class="example-margin" [(ngModel)]="required">Required</mat-checkbox>
-    </div> -->
-    <div>
-        <form [formGroup]="loginForm" (ngSubmit)="loginUser()" >
-            <input type="text" placeholder="Enter name" name="user" formControlName="user">
-            <mat-form-field>
-                <mat-label>Field Name</mat-label>
-                <input matInput name="name" formControlName="name">
-            </mat-form-field>
-            <br><br>
-            <button >Add</button>
-        </form>
-    </div>
-</div>
+        <mat-checkbox class="example-margin" [(ngModel)]="required" formControlName="isRequired">Required</mat-checkbox>
+        <br><br>
+        <mat-form-field *ngIf="loginForm.get('labelType')?.value === 'select'">
+            <input matInput formControlName="options" placeholder="enter options (comma separated)">
+        </mat-form-field>
+        <br><br>
+        <button>Add</button>
+    </form>
+</div> -->
+
+<div class="example-container">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()" (ngSubmit)="addField()" class="form-container">
+      <mat-form-field class="form-field">
+        <mat-label>Field Name</mat-label>
+        <input matInput name="labelName" formControlName="labelName">
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <mat-label>Field Type</mat-label>
+        <mat-select name="labelType" formControlName="labelType" id="labelType">
+          <mat-option value="text">Text</mat-option>
+          <mat-option value="email">Email</mat-option>
+          <mat-option value="password">Password</mat-option>
+          <mat-option value="select">Select</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-checkbox class="example-margin" [(ngModel)]="required" formControlName="isRequired">Required</mat-checkbox>
+  
+      <div *ngIf="loginForm.get('labelType')?.value === 'select'" >
+        <mat-form-field class="form-field">
+            <mat-label>Options</mat-label>
+            <input matInput formControlName="options" placeholder="Enter options (comma separated)">
+        </mat-form-field>
+      </div>
+  
+      <div class="button-container">
+        <button type="submit">Add</button>
+      </div>
+    </form>
+  </div>
+  

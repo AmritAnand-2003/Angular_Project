@@ -1,0 +1,37 @@
+<table >
+    <thead>
+      <tr>
+        <th>Element Name</th>
+        <th>Element Type</th>
+        <th>Options</th>
+        <th>Required</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of receivedData">
+          <td>{{ item.labelName }}</td>
+          <td class="type">{{ item.labelType }}</td>
+          <td>{{item.options}}</td>
+          <td>{{ item.isRequired }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- <div>
+      <button type="submit" (click)="generateForm()">Generate HTML Code</button> 
+
+</div> -->
+<section class="center-container">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="generateForm()">Generate HTML CODE</button>
+    </div>
+</section>
+
+<div class="html-code-container">
+    <!-- <div class="row"> -->
+      <h2 class="row" style="text-align: center;">Here is the HTML Code</h2>
+    <!-- </div> -->
+    <mat-form-field class="area">
+      <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" rows="5" cdkAutosizeMaxRows="20">{{rowHtml}}</textarea>
+    </mat-form-field>
+</div>

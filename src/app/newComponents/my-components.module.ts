@@ -6,6 +6,7 @@ import { MaterialUIModule } from '../material-ui/material-ui.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableBuildComponent } from './table-build/table-build.component';
 
 
 
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     FormBuilderComponent,
     FormCreatorComponent,
+    TableBuildComponent
     
   ],
   imports: [
@@ -21,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   exports: [
     FormBuilderComponent,
-    FormCreatorComponent
+    FormCreatorComponent,
+    TableBuildComponent
   ]
 })
 export class MyComponentsModule { }

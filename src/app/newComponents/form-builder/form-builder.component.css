@@ -1,5 +1,25 @@
 .example-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .form-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .example-margin {
+    margin-top: 10px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  

@@ -9,6 +9,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {DataSource} from '@angular/cdk/table';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 @NgModule({
@@ -24,7 +30,10 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatCheckboxModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatDividerModule,
+    MatButtonModule
   ],
   exports:[MatSlideToggleModule,
     MatInputModule,
@@ -35,7 +44,10 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatCheckboxModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatDividerModule,
+    MatButtonModule
   ]
 })
 export class MaterialUIModule { }
